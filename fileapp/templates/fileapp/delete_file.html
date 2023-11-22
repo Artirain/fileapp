@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>Delete File</h2>
+    <p>Are u sure u want to delete {{ file.description }}?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+
+    <a href="{% url 'file_list' %}">Cansel</a>
+{% endblock %}
